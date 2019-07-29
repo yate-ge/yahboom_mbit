@@ -1067,6 +1067,7 @@ namespace mbit_小车类 {
             case CarState.Car_Stop: Car_stop(); break;
             case CarState.Car_SpinLeft: Car_spinleft(speed, speed); break;
             case CarState.Car_SpinRight: Car_spinright(speed, speed); break;
+            case CarState.Car_Rotate: Car_rotate(speed, speed); break;
         }
     }
     //% blockId=mbit_CarCtrlSpeed2 block="CarCtrlSpeed2|%index|speed1 %speed1|speed2 %speed2"
@@ -1084,6 +1085,7 @@ namespace mbit_小车类 {
             case CarState.Car_Stop: Car_stop(); break;
             case CarState.Car_SpinLeft: Car_spinleft(speed1, speed2); break;
             case CarState.Car_SpinRight: Car_spinright(speed1, speed2); break;
+            case CarState.Car_Rotate: Car_rotate(speed1, speed2); break;
         }
     }
 }
