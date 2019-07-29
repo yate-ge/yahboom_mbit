@@ -549,7 +549,7 @@ namespace mbit_小车类 {
         //% blockId="Car_SpinLeft" block="原地左旋"
         Car_SpinLeft = 6,
         //% blockId="Car_SpinRight" block="原地右旋"
-        Car_SpinRight = 7
+        Car_SpinRight = 7,
 
         Car_Rotate = 8
     }
