@@ -1042,14 +1042,14 @@ namespace mbit_小车类 {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function CarCtrl(index: CarState): void {
         switch (index) {
-            case CarState.Car_Run: Car_run(100, 100); break;
-            case CarState.Car_Back: Car_back(100, 100); break;
-            case CarState.Car_Left: Car_left(0, 100); break;
-            case CarState.Car_Right: Car_right(100, 0); break;
+            case CarState.Car_Run: Car_run(40, 40); break;
+            case CarState.Car_Back: Car_back(40, 40); break;
+            case CarState.Car_Left: Car_left(0, 40); break;
+            case CarState.Car_Right: Car_right(40, 0); break;
             case CarState.Car_Stop: Car_stop(); break;
-            case CarState.Car_SpinLeft: Car_spinleft(100, 100); break;
-            case CarState.Car_SpinRight: Car_spinright(100, 100); break;
-            case CarState.Car_Rotate: Car_rotate(100, 100); break;
+            case CarState.Car_SpinLeft: Car_spinleft(40, 40); break;
+            case CarState.Car_SpinRight: Car_spinright(40, 40); break;
+            case CarState.Car_Rotate: Car_rotate(40, 40); break;
         }
     }
     //% blockId=mbit_CarCtrlSpeed block="CarCtrlSpeed|%index|speed %speed"
