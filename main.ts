@@ -550,6 +550,8 @@ namespace mbit_小车类 {
         Car_SpinLeft = 6,
         //% blockId="Car_SpinRight" block="原地右旋"
         Car_SpinRight = 7
+
+        Car_Rotate = 8
     }
 
     function i2cwrite(addr: number, reg: number, value: number) {
@@ -653,6 +655,22 @@ namespace mbit_小车类 {
 
         //pins.analogWritePin(AnalogPin.P0, 1023 - speed);//速度控制
         //pins.digitalWritePin(DigitalPin.P8, 1);
+    }
+    function Car_rotate(speed1: number, speed2: number) {
+        speed1 = speed1 * 16; // map 350 to 4096
+        speed2 = speed2 * 16;
+        if (speed1 >= 4096) {
+            speed1 = 4095
+        }
+        if (speed2 >= 4096) {
+            speed2 = 4095
+        }
+
+        setPwm(12, 0, speed1);
+        setPwm(13, 0, 0);
+
+        setPwm(15, 0, 0);
+        setPwm(14, 0, speed2);
     }
 
     function Car_left(speed1: number, speed2: number) {
@@ -1031,6 +1049,7 @@ namespace mbit_小车类 {
             case CarState.Car_Stop: Car_stop(); break;
             case CarState.Car_SpinLeft: Car_spinleft(255, 255); break;
             case CarState.Car_SpinRight: Car_spinright(255, 255); break;
+            case CarState.Car_Rotate: Car_rotate(255, 255); break;
         }
     }
     //% blockId=mbit_CarCtrlSpeed block="CarCtrlSpeed|%index|speed %speed"
